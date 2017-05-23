@@ -18,6 +18,7 @@ function getNumberHappy($number, $numberAlreadyUseds)
 {
     global $initialNumber;
     $sumOfNumbers = sumNumber($number);
+
     if (in_array($sumOfNumbers, $numberAlreadyUseds)) {
         $numberAlreadyUseds[] = $sumOfNumbers;
         print_r($numberAlreadyUseds);
@@ -31,8 +32,6 @@ function getNumberHappy($number, $numberAlreadyUseds)
         die("O número $initialNumber é feliz :)");
     }
 
-
-    $numberAlreadyUseds[] = $sumOfNumbers;
     getNumberHappy($sumOfNumbers, $numberAlreadyUseds);
 }
 
